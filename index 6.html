@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Triángulos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .inputs {
+            flex: 1;
+            text-align: left;
+        }
+        input {
+            margin: 5px 0;
+            padding: 10px;
+            width: calc(100% - 22px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:first-of-type {
+            background-color: #28a745;
+            color: white;
+        }
+        button:last-of-type {
+            background-color: #dc3545;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-weight: bold;
+        }
+        #resultado {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .triangle-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        svg {
+            max-width: 250px;
+        }
+        .lado {
+            fill: blue;
+            font-weight: bold;
+        }
+        .angulo {
+            fill: purple;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Triángulos</h2>
+    <div class="container">
+        <div class="inputs">
+            <p>Ingrese tres datos (al menos un lado):</p>
+            <label for="ladoA">Lado A:</label>
+            <input type="number" id="ladoA" placeholder="Ingrese el lado A">
+            <label for="ladoB">Lado B:</label>
+            <input type="number" id="ladoB" placeholder="Ingrese el lado B">
+            <label for="ladoC">Lado C:</label>
+            <input type="number" id="ladoC" placeholder="Ingrese el lado C">
+            <label for="anguloA">Ángulo A (°):</label>
+            <input type="number" id="anguloA" placeholder="Ingrese el ángulo A">
+            <label for="anguloB">Ángulo B (°):</label>
+            <input type="number" id="anguloB" placeholder="Ingrese el ángulo B">
+            <label for="anguloC">Ángulo C (°):</label>
+            <input type="number" id="anguloC" placeholder="Ingrese el ángulo C">
+            <button onclick="calcularTriangulo()">Calcular</button>
+            <button onclick="limpiarCampos()">Reiniciar</button>
+            <h3>Resultados:</h3>
+            <p id="resultado"></p>
+        </div>
+        <div class="triangle-container">
+            <svg viewBox="0 0 200 200">
+                <polygon points="20,180 180,180 100,20" stroke="black" stroke-width="2" fill="none" />
+                <text x="15" y="110" font-size="12" class="lado">Lado A</text>
+                <text x="130" y="195" font-size="12" class="lado">Lado B</text>
+                <text x="85" y="15" font-size="12" class="lado">Lado C</text>
+                <text x="35" y="165" font-size="12" class="angulo">Ángulo A</text>
+                <text x="120" y="165" font-size="12" class="angulo">Ángulo B</text>
+                <text x="95" y="50" font-size="12" class="angulo">Ángulo C</text>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
